@@ -102,7 +102,7 @@ export default function Home() {
         })}
       </div>
       <div className="text-center mb-5 relative z-10">
-        <h1 className="text-[200px] font-light">Let's talk</h1>
+        <h1 className="text-[200px] font-light">talk</h1>
       </div>
       <div className="flex justify-between relative z-10">
         <div>
