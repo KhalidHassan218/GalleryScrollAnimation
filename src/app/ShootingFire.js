@@ -206,7 +206,7 @@ const ShootingFire = () => {
           color: "white",
         }}
       >
-        Let's Take
+        Let&#39; Take
       </div>
 
       {/* Flex Row Section */}
