@@ -1,33 +1,59 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.gallery {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  overflow: hidden; /* Prevent overflow */
+
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* .blockk {
+  position: absolute;
+  z-index: 1000;
+  width: 200px;
+  height: 100px;
+  background: #c0c0c0;
+  transform-style: preserve-3d;
+  transform: translateZ(1750px);
+} */
+
+.header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1 {
+  color: #75fe97;
+  text-transform: uppercase;
+  font-family: "Arame";
+  font-weight: 500;
+  font-size: 100px;
+  text-align: center;
+  line-height: 1;
+  pointer-events: none;
+}
+
+p {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Arame";
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 8px;
+  margin: 1em 0;
+  pointer-events: none;
 }
