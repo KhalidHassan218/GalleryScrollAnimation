@@ -5,5 +5,5 @@ import Slider from "./Sllider";
 import ShootingFire from "./ShootingFire";
 
 export default function Home() {
-  return <ShootingFire />;
+  return <Slider />;
 }
