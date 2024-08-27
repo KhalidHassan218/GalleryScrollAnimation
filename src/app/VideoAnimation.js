@@ -24,7 +24,6 @@ const VideoAnimation = () => {
         end: "bottom top",
         scrub: true, // Synchronize with scroll speed
         pin: true,
-        markers: true,
       },
     });
 
