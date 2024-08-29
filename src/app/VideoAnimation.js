@@ -145,7 +145,7 @@ const VideoAnimation = () => {
     const setupAnimation = () => {
       if (mediaQuery.matches) {
         gsap.set(text, { z: 999, y: -8, opacity: 1 });
-video.play()
+        video.play();
 
         // Text animation timeline
         const tl = gsap.timeline({
@@ -153,7 +153,7 @@ video.play()
             trigger: container,
             start: "top top",
             end: "+=100%", // Pin for 100% of the viewport height
-            scrub: true,
+            scrub: 1,
             pin: true,
             anticipatePin: 1,
             pinSpacing: true,
@@ -164,18 +164,14 @@ video.play()
 
         // Animate text translation on z-axis on scroll
         tl.to(text, {
-          z: 0, // Adjust this to align with the "F" letter
-          duration: 1,
-          ease: "power2.inOut",
-        }).to(text, {
-          z: 0, // Move the text past the camera
+          z: 0,
           duration: 1,
           ease: "power2.inOut",
         });
 
         // ScrollTrigger for video playback control
-
       } else {
+        video.pause();
         // Kill all ScrollTriggers on small screens
         ScrollTrigger.getAll().forEach((t) => t.kill());
         // Reset video and text to default state
@@ -200,7 +196,7 @@ video.play()
 
       <div
         ref={containerRef}
-        className="h-screen bg-black text-[100px] md:text-[100px] lg:text-[200px] overflow-hidden relative"
+        className="h-screen bg-black text-[70px] md:text-[100px] lg:text-[200px] overflow-hidden relative"
       >
         <div
           className="absolute inset-0 flex items-center justify-center bg-black text-white font-bold font-sans select-none"
@@ -211,15 +207,8 @@ video.play()
             className="flex"
             style={{ transformStyle: "preserve-3d" }}
           >
-            <span style={{ transform: "translateZ(0)" }}>R</span>
-            <span style={{ transform: "translateZ(0)" }}>O</span>
-            <span style={{ transform: "translateZ(0)" }}>G</span>
-            <span style={{ transform: "translateZ(0)" }} className="relative">
-              F
-            </span>
-            <span style={{ transform: "translateZ(0)" }}>L</span>
-            <span style={{ transform: "translateZ(0)" }}>O</span>
-            <span style={{ transform: "translateZ(0)" }}>W</span>
+            {" "}
+            ROGFLOW
           </div>
         </div>
         <video
